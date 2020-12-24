@@ -12,10 +12,10 @@ export class PostsService {
     ) {}
 
     async insertPost(title: string, content: string): Promise<object>{
-        const id = Math.random().toString();
         const post = new this.postModel({
             title, 
-            content
+            content,
+            date_created: new Date().toString()
         });
         const result = await post.save();
         return result._id;
@@ -27,7 +27,8 @@ export class PostsService {
             (prod) => ({
                 id: prod.id, 
                 title: prod.title,
-                content: prod.content
+                content: prod.content,
+                date_created: prod.date_created
             })
         );
     }
@@ -37,7 +38,8 @@ export class PostsService {
         return {
             id: post.id,
             title: post.title,
-            content: post.content
+            content: post.content,
+            date_created: post.date_created
         };
     }
 
