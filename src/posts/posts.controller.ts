@@ -13,6 +13,6 @@ export class PostsController {
         @Body('title') postTitle: string, 
         @Body('description') postDescription: string
     ): any {
-        return id = this.postService.insertPost(postTitle, postDescription);
+        return this.postService.insertPost(postTitle, postDescription);
     }
 }
