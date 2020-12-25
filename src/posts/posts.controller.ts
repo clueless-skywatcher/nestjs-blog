@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param, Patch, Delete } from '@nestjs/common';
+import { Post, Body, Get, Param, Patch, Delete, Render, Controller } from '@nestjs/common';
 import { ContextIdFactory } from '@nestjs/core';
 import { PostsService } from './posts.service';
 

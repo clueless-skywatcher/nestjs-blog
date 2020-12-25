@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { PostsController } from './posts.controller';
+import { PostViewsController } from './posts.views.controller';
 import { PostsService } from './posts.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PostSchema } from './posts.model';
@@ -11,7 +12,7 @@ import { PostSchema } from './posts.model';
       schema: PostSchema
     }])
   ],
-  controllers: [PostsController],
+  controllers: [PostsController, PostViewsController],
   providers: [PostsService]
 })
 export class PostsModule {}
